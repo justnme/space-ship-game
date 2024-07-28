@@ -36,38 +36,69 @@ function startGame() {
 
 
     
-    function moveShip1() {
-        var x = ship1.offsetLeft;
-        var y = ship1.offsetTop;
     
-        ship1.classList.add('rotate');
-    
-        if (keys.ArrowUp && y > game.offsetTop) {
-            ship1.style.top = (y - speed) + 'px';
-            ship1.style.transform = 'rotate(0deg)';
-        } else if (keys.ArrowDown && y < (game.offsetTop + game.offsetHeight - ship1.offsetHeight)) {
-            ship1.style.top = (y + speed) + 'px';
-            ship1.style.transform = 'rotate(180deg)';
-        } else if (keys.ArrowLeft && x > game.offsetLeft) {
-            ship1.style.left = (x - speed) + 'px';
-            ship1.style.transform = 'rotate(-90deg)';
-        } else if (keys.ArrowRight && x < (game.offsetLeft + game.offsetWidth - ship1.offsetWidth)) { 
-            ship1.style.left = (x + speed) + 'px';
-            ship1.style.transform = 'rotate(90deg)';
+function moveShip1() {
+    var x = ship1.offsetLeft;
+    var y = ship1.offsetTop;
 
-        } else {
-            ship1.style.transform = 'rotate(0deg)';
-        }
-    
-        requestAnimationFrame(moveShip1);
+    ship1.classList.add('rotate');
+
+    if (keys.ArrowUp && keys.ArrowLeft && y > game.offsetTop && x > game.offsetLeft) {
+        ship1.style.top = (y - speed) + 'px';
+        ship1.style.left = (x - speed) + 'px';
+        ship1.style.transform = 'rotate(-45deg)';
+    } else if (keys.ArrowUp && keys.ArrowRight && y > game.offsetTop && x < (game.offsetLeft + game.offsetWidth - ship1.offsetWidth)) {
+        ship1.style.top = (y - speed) + 'px';
+        ship1.style.left = (x + speed) + 'px';
+        ship1.style.transform = 'rotate(45deg)';
+    } else if (keys.ArrowDown && keys.ArrowLeft && y < (game.offsetTop + game.offsetHeight - ship1.offsetHeight) && x > game.offsetLeft) {
+        ship1.style.top = (y + speed) + 'px';
+        ship1.style.left = (x - speed) + 'px';
+        ship1.style.transform = 'rotate(-135deg)';
+    } else if (keys.ArrowDown && keys.ArrowRight && y < (game.offsetTop + game.offsetHeight - ship1.offsetHeight) && x < (game.offsetLeft + game.offsetWidth - ship1.offsetWidth)) {
+        ship1.style.top = (y + speed) + 'px';
+        ship1.style.left = (x + speed) + 'px';
+        ship1.style.transform = 'rotate(135deg)';
+    } else if (keys.ArrowUp && y > game.offsetTop) {
+        ship1.style.top = (y - speed) + 'px';
+        ship1.style.transform = 'rotate(0deg)';
+    } else if (keys.ArrowDown && y < (game.offsetTop + game.offsetHeight - ship1.offsetHeight)) {
+        ship1.style.top = (y + speed) + 'px';
+        ship1.style.transform = 'rotate(180deg)';
+    } else if (keys.ArrowLeft && x > game.offsetLeft) {
+        ship1.style.left = (x - speed) + 'px';
+        ship1.style.transform = 'rotate(-90deg)';
+    } else if (keys.ArrowRight && x < (game.offsetLeft + game.offsetWidth - ship1.offsetWidth)) {
+        ship1.style.left = (x + speed) + 'px';
+        ship1.style.transform = 'rotate(90deg)';
+    } else {
+        ship1.style.transform = 'rotate(0deg)';
     }
+
+    requestAnimationFrame(moveShip1);
+}
     
     function moveShip2() {
         var x = ship2.offsetLeft;
         var y = ship2.offsetTop;
 
-      
-        if (keys.w && y > game.offsetTop) {
+        if (keys.w && keys.a && y > game.offsetTop && x > game.offsetLeft) {
+            ship2.style.top = (y - speed) + 'px';
+            ship2.style.left = (x - speed) + 'px';
+            ship2.style.transform = 'rotate(-45deg)';
+        } else if (keys.w && keys.d && y > game.offsetTop && x < (game.offsetLeft + game.offsetWidth - ship2.offsetWidth)) {
+            ship2.style.top = (y - speed) + 'px';
+            ship2.style.left = (x + speed) + 'px';
+            ship2.style.transform = 'rotate(45deg)';
+        } else if (keys.s && keys.a && y < (game.offsetTop + game.offsetHeight - ship2.offsetHeight) && x > game.offsetLeft) {
+            ship2.style.top = (y + speed) + 'px';
+            ship2.style.left = (x - speed) + 'px';
+            ship2.style.transform = 'rotate(-135deg)';
+        } else if (keys.s && keys.d && y < (game.offsetTop + game.offsetHeight - ship2.offsetHeight) && x < (game.offsetLeft + game.offsetWidth - ship2.offsetWidth)) {
+            ship2.style.top = (y + speed) + 'px';
+            ship2.style.left = (x + speed) + 'px';
+            ship2.style.transform = 'rotate(135deg)';
+        } else if (keys.w && y > game.offsetTop) {
             ship2.style.top = (y - speed) + 'px';
             ship2.style.transform = 'rotate(0deg)';
         } else if (keys.s && y < (game.offsetTop + game.offsetHeight - ship2.offsetHeight)) {
@@ -76,14 +107,12 @@ function startGame() {
         } else if (keys.a && x > game.offsetLeft) {
             ship2.style.left = (x - speed) + 'px';
             ship2.style.transform = 'rotate(-90deg)';
-        } else if (keys.d && x < (game.offsetLeft + game.offsetWidth - ship2.offsetWidth)) { 
+        } else if (keys.d && x < (game.offsetLeft + game.offsetWidth - ship2.offsetWidth)) {
             ship2.style.left = (x + speed) + 'px';
             ship2.style.transform = 'rotate(90deg)';
-
         } else {
             ship2.style.transform = 'rotate(0deg)';
         }
-
         requestAnimationFrame(moveShip2);
     }
 
