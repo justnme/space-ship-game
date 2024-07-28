@@ -16,7 +16,6 @@
     height: 75px;
     background: url('pngegg\ \(7\).png') no-repeat;
     background-size: cover;
-    rotate: -55deg;
 }
 .ship2 {
     position: absolute;
@@ -26,9 +25,12 @@
     height: 75px;
     background: url('pngegg\ \(11\).png') no-repeat;
     background-size: cover;
-    rotate: 33deg;
-
+    transition: transform 0.5s;
 }
 .gameover{
     visibility: hidden;
+}
+
+.rotate {
+    transition: transform 0.5s;
 }
