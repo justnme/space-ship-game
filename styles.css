@@ -14,7 +14,7 @@
     left: 55%;
     width: 75px;
     height: 75px;
-    background: url('pngegg\ \(7\).png') no-repeat;
+    background: url('spaceship1.png') no-repeat;
     background-size: cover;
 }
 .ship2 {
@@ -23,7 +23,7 @@
     left: 45%;
     width: 75px;
     height: 75px;
-    background: url('pngegg\ \(11\).png') no-repeat;
+    background: url('spaceship2.png') no-repeat;
     background-size: cover;
     transition: transform 0.5s;
 }
