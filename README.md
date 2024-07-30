@@ -6,4 +6,5 @@ simple js ship asteroid collection game
 4. Game is 60 seconds
 5. Asteroid is collected when ship has collision with asteroid
 6. The player with most collected objects wins
-7. Restart game  
+   
+   ![asteroid](https://github.com/user-attachments/assets/e6d9a90a-ebd8-4f4d-9875-c10808fae437)
