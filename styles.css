@@ -11,7 +11,7 @@
 .ship1 {
     position: absolute;
     top: 50%;
-    left: 55%;
+    left: 50%;
     width: 75px;
     height: 75px;
     background: url('spaceship1.png') no-repeat;
@@ -20,7 +20,7 @@
 .ship2 {
     position: absolute;
     top: 50%;
-    left: 45%;
+    left: 35%;
     width: 75px;
     height: 75px;
     background: url('spaceship2.png') no-repeat;
